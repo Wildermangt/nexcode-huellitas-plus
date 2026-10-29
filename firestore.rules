@@ -1,0 +1,209 @@
+rules_version = '2';
+
+// =====================================================================
+//  Reglas de seguridad de Cloud Firestore — HuellitasPlus
+//  Autorización (Punto 3), privacidad del chat (Punto 9) y restricción
+//  del marketplace: solo alimentos para perros (Punto 6).
+//
+//  Publicar: consola de Firebase > Firestore Database > Reglas > pegar > Publicar
+//  (o "firebase deploy --only firestore:rules").
+//
+//  Los pagos y los cambios de estado de los pedidos los escribe SOLO el
+//  backend (Vercel) con el SDK de administrador, que no pasa por estas reglas.
+// =====================================================================
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // ---------- Funciones auxiliares ----------
+    function autenticado() {
+      return request.auth != null;
+    }
+
+    function esYo(uid) {
+      return autenticado() && request.auth.uid == uid;
+    }
+
+    function esAdmin() {
+      return autenticado()
+        && exists(/databases/$(database)/documents/usuarios/$(request.auth.uid))
+        && get(/databases/$(database)/documents/usuarios/$(request.auth.uid)).data.rol == 'admin';
+    }
+
+    function textoValido(valor, minimo, maximo) {
+      return valor is string && valor.size() >= minimo && valor.size() <= maximo;
+    }
+
+    // Restricción del marketplace: solo alimentos para perros.
+    function productoValido(p) {
+      return p.especie == 'perro'
+        && p.categoriaId in ['concentrado', 'humedo', 'snacks']
+        && textoValido(p.nombre, 3, 120)
+        && textoValido(p.marca, 1, 60)
+        && p.precio is int && p.precio > 0
+        && p.stock is int && p.stock >= 0;
+    }
+
+    // ---------- Usuarios (datos privados) ----------
+    match /usuarios/{uid} {
+      allow read: if esYo(uid) || esAdmin();
+      // Nadie puede asignarse el rol de administrador desde la app.
+      allow create: if esYo(uid)
+        && (!('rol' in request.resource.data) || request.resource.data.rol == 'cliente');
+      allow update: if esYo(uid)
+        && request.resource.data.get('rol', 'cliente') == resource.data.get('rol', 'cliente');
+      allow delete: if false;
+
+      // Usuarios bloqueados en el chat (solo los ve y edita el dueño)
+      match /bloqueados/{otroUid} {
+        allow read, write: if esYo(uid);
+      }
+
+      // Perros registrados por el usuario
+      match /perros/{perroId} {
+        allow read, delete: if esYo(uid);
+        allow create, update: if esYo(uid)
+          && textoValido(request.resource.data.nombre, 1, 30)
+          && request.resource.data.edad is number
+          && request.resource.data.edad > 0 && request.resource.data.edad <= 30
+          && request.resource.data.tamano in ['PEQUENO', 'MEDIANO', 'GRANDE'];
+      }
+
+      // Cuidados con recordatorio: vacunas, desparasitantes, medicamentos, baños…
+      match /cuidados/{cuidadoId} {
+        allow read, delete: if esYo(uid);
+        allow create, update: if esYo(uid)
+          && request.resource.data.tipo in
+             ['VACUNA', 'DESPARASITANTE', 'MEDICAMENTO', 'BANO', 'PELUQUERIA', 'OTRO']
+          && request.resource.data.perroId is string
+          && request.resource.data.proxima is timestamp
+          && request.resource.data.nombre is string && request.resource.data.nombre.size() <= 60
+          && request.resource.data.cada is int
+          && request.resource.data.cada >= 0 && request.resource.data.cada <= 365
+          && request.resource.data.historial is list && request.resource.data.historial.size() <= 60;
+      }
+    }
+
+    // ---------- Perfil público (solo nombre y ciudad) ----------
+    match /perfiles_publicos/{uid} {
+      allow read: if autenticado();
+      allow write: if esYo(uid)
+        && request.resource.data.keys().hasOnly(['nombre', 'ciudad'])
+        && textoValido(request.resource.data.nombre, 1, 60);
+    }
+
+    // ---------- Catálogo ----------
+    match /categorias/{categoriaId} {
+      allow read: if autenticado();
+      allow write: if esAdmin() && categoriaId in ['concentrado', 'humedo', 'snacks'];
+    }
+
+    match /productos/{productoId} {
+      allow read: if autenticado();
+      allow create: if esAdmin() && productoValido(request.resource.data);
+      allow delete: if esAdmin();
+      // El administrador edita todo; un cliente solo puede DESCONTAR inventario
+      // (lo hace la transacción que confirma el pedido).
+      allow update: if (esAdmin() && productoValido(request.resource.data))
+        || (autenticado()
+            && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['stock', 'actualizado'])
+            && request.resource.data.stock is int
+            && request.resource.data.stock >= 0
+            && request.resource.data.stock < resource.data.stock);
+    }
+
+    // ---------- Inventario (historial de movimientos) ----------
+    match /inventario_movimientos/{movId} {
+      allow read: if esAdmin();
+      allow create: if autenticado()
+        && request.resource.data.usuarioId == request.auth.uid
+        && (esAdmin() || request.resource.data.motivo == 'venta');
+      allow update, delete: if false;
+    }
+
+    // ---------- Carrito ----------
+    match /carritos/{uid}/items/{productoId} {
+      allow read, delete: if esYo(uid);
+      allow create, update: if esYo(uid)
+        && request.resource.data.cantidad is int
+        && request.resource.data.cantidad >= 1
+        && request.resource.data.cantidad <= 20;
+    }
+
+    // ---------- Pedidos ----------
+    match /pedidos/{pedidoId} {
+      allow read: if autenticado()
+        && (resource.data.usuarioId == request.auth.uid || esAdmin());
+      allow create: if autenticado()
+        && request.resource.data.usuarioId == request.auth.uid
+        && request.resource.data.estado == 'PENDIENTE_PAGO'
+        && request.resource.data.total == request.resource.data.subtotal + request.resource.data.envio
+        && request.resource.data.total > 0;
+      // El estado del pedido solo lo cambia el backend de pagos.
+      allow update, delete: if false;
+
+      match /detalles/{productoId} {
+        allow read: if autenticado()
+          && (get(/databases/$(database)/documents/pedidos/$(pedidoId)).data.usuarioId == request.auth.uid
+              || esAdmin());
+        allow create: if autenticado()
+          && getAfter(/databases/$(database)/documents/pedidos/$(pedidoId)).data.usuarioId == request.auth.uid
+          && request.resource.data.subtotal == request.resource.data.precioUnitario * request.resource.data.cantidad;
+        allow update, delete: if false;
+      }
+    }
+
+    // ---------- Pagos (solo lectura para el dueño) ----------
+    match /pagos/{referencia} {
+      allow read: if autenticado()
+        && (resource.data.usuarioId == request.auth.uid || esAdmin());
+      allow write: if false;
+    }
+
+    // ---------- Chat entre usuarios ----------
+    match /conversaciones/{convId} {
+      function participantesValidos(p) {
+        return p is list && p.size() == 2
+          && request.auth.uid in p
+          && (convId == p[0] + '_' + p[1] || convId == p[1] + '_' + p[0]);
+      }
+
+      // Solo los dos participantes pueden ver la conversación.
+      allow read: if autenticado() && request.auth.uid in resource.data.participantes;
+      allow create: if autenticado() && participantesValidos(request.resource.data.participantes);
+      allow update: if autenticado()
+        && request.auth.uid in resource.data.participantes
+        && request.resource.data.participantes == resource.data.participantes;
+      allow delete: if false;
+
+      // Ninguno de los dos participantes bloqueó al otro.
+      function sinBloqueo(p) {
+        let yo = request.auth.uid;
+        let otro = p[0] == yo ? p[1] : p[0];
+        return !exists(/databases/$(database)/documents/usuarios/$(otro)/bloqueados/$(yo))
+          && !exists(/databases/$(database)/documents/usuarios/$(yo)/bloqueados/$(otro));
+      }
+
+      match /mensajes/{mensajeId} {
+        allow read: if autenticado()
+          && request.auth.uid in get(/databases/$(database)/documents/conversaciones/$(convId)).data.participantes;
+        allow create: if autenticado()
+          && request.auth.uid in getAfter(/databases/$(database)/documents/conversaciones/$(convId)).data.participantes
+          && sinBloqueo(getAfter(/databases/$(database)/documents/conversaciones/$(convId)).data.participantes)
+          && request.resource.data.remitenteId == request.auth.uid
+          && textoValido(request.resource.data.texto, 1, 1000)
+          && request.resource.data.fecha == request.time;
+        allow update, delete: if false;
+      }
+    }
+
+    // ---------- Reportes de usuarios (moderación) ----------
+    match /reportes/{reporteId} {
+      allow create: if autenticado()
+        && request.resource.data.reportanteId == request.auth.uid
+        && request.resource.data.reportadoId != request.auth.uid
+        && textoValido(request.resource.data.motivo, 3, 300);
+      allow read, update: if esAdmin();
+      allow delete: if false;
+    }
+  }
+}
