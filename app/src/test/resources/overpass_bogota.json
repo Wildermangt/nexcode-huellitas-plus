@@ -1,0 +1,150 @@
+{
+  "version": 0.6,
+  "generator": "Overpass API 0.7.62.11 87bfad18",
+  "osm3s": {
+    "timestamp_osm_base": "2026-10-22T01:08:06Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+
+{
+  "type": "node",
+  "id": 5125683314,
+  "lat": 4.6333843,
+  "lon": -74.0709311,
+  "tags": {
+    "amenity": "veterinary",
+    "name": "Clínica Veterinaria"
+  }
+},
+{
+  "type": "node",
+  "id": 5140241986,
+  "lat": 4.6337114,
+  "lon": -74.0705092,
+  "tags": {
+    "amenity": "veterinary",
+    "name": "Oveja negra"
+  }
+},
+{
+  "type": "node",
+  "id": 5143900909,
+  "lat": 4.6630923,
+  "lon": -74.0632659,
+  "tags": {
+    "addr:street": "Calle 74",
+    "amenity": "veterinary",
+    "name": "Veterinaria El Burro",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 5143929224,
+  "lat": 4.6595517,
+  "lon": -74.0638391,
+  "tags": {
+    "addr:city": "Bogotá D.C.",
+    "addr:street": "Avenida Carrera 17",
+    "amenity": "veterinary",
+    "name": "Can Center",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 5163487131,
+  "lat": 4.6542422,
+  "lon": -74.0663929,
+  "tags": {
+    "addr:city": "Chapinero",
+    "addr:street": "Calle 66",
+    "amenity": "veterinary",
+    "name": "+ Cotas",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 5173160100,
+  "lat": 4.6529440,
+  "lon": -74.0697421,
+  "tags": {
+    "addr:city": "Barrios Unidos",
+    "addr:street": "Carrera 20",
+    "amenity": "veterinary",
+    "name": "Villanimal",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 5177049306,
+  "lat": 4.6361195,
+  "lon": -74.0750749,
+  "tags": {
+    "addr:street": "Avenida Carrera 24",
+    "amenity": "veterinary",
+    "name": "Animal Center",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "node",
+  "id": 6387020035,
+  "lat": 4.6387913,
+  "lon": -74.0702680,
+  "tags": {
+    "amenity": "veterinary",
+    "name": "Pecas"
+  }
+},
+{
+  "type": "node",
+  "id": 6518260947,
+  "lat": 4.6376360,
+  "lon": -74.0618538,
+  "tags": {
+    "addr:city": "Bogotá D.C.",
+    "addr:housenumber": "51A-46",
+    "addr:street": "Transversal 4",
+    "amenity": "veterinary",
+    "name": "City Vet"
+  }
+},
+{
+  "type": "way",
+  "id": 334799394,
+  "center": {
+    "lat": 4.6317968,
+    "lon": -74.0689992
+  },
+  "tags": {
+    "addr:housenumber": "43-89",
+    "addr:street": "Carrera 15",
+    "amenity": "veterinary",
+    "building": "yes",
+    "name": "Centro Quirurgico - Veterinaria",
+    "source": "Kaart Ground Survey 2017"
+  }
+},
+{
+  "type": "way",
+  "id": 371982770,
+  "center": {
+    "lat": 4.6393887,
+    "lon": -74.0668860
+  },
+  "tags": {
+    "addr:city": "Bogotá D.C.",
+    "addr:housenumber": "52-14",
+    "addr:street": "Avenida Caracas",
+    "amenity": "veterinary",
+    "building": "yes",
+    "name": "Belta"
+  }
+}
+
+  ]
+}
