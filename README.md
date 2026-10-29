@@ -10,6 +10,8 @@ Docente: Ing. Jairo Armando Salcedo Aranda
 | Jeferson Wilderman González Tenjo | Product Owner · Developer |
 | José Leandro Ocampo Camacho | Scrum Master · Developer |
 
+Documentación del proyecto en [`docs/`](docs/01-planeacion-y-requisitos.md): planeación, requisitos y mockups.
+
 ## Tecnologías
 
 - Java, Android SDK 35 (`minSdk 24`), Gradle
