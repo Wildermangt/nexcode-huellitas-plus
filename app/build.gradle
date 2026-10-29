@@ -1,0 +1,104 @@
+plugins {
+    id 'com.android.application'
+}
+
+// El plugin de Firebase solo se aplica cuando existe google-services.json,
+// así el proyecto compila aunque todavía no se haya conectado a Firebase.
+if (file('google-services.json').exists()) {
+    apply plugin: 'com.google.gms.google-services'
+}
+
+// Valores locales que no se suben al repositorio (local.properties).
+def props = new Properties()
+def propsFile = rootProject.file('local.properties')
+if (propsFile.exists()) {
+    propsFile.withInputStream { props.load(it) }
+}
+
+android {
+    namespace 'com.usb.edadperro'
+    compileSdk 35
+
+    defaultConfig {
+        applicationId "com.usb.edadperro"
+        minSdk 24
+        targetSdk 35
+        versionCode 2
+        versionName "2.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        // URL del backend serverless (Vercel) que firma los pagos de Wompi.
+        buildConfigField "String", "BACKEND_URL",
+                "\"${props.getProperty('huellita.backendUrl', '')}\""
+        // Modelo de Gemini usado por el asistente (Firebase AI Logic).
+        buildConfigField "String", "GEMINI_MODEL",
+                "\"${props.getProperty('huellita.geminiModel', 'gemini-flash-lite-latest')}\""
+    }
+
+    // Firma de la versión de publicación.
+    // Las contraseñas se leen de local.properties para no dejarlas en el código.
+    signingConfigs {
+        release {
+            if (props.getProperty('keystore.password')) {
+                storeFile file('../edadperro.jks')
+                storePassword props.getProperty('keystore.password')
+                keyAlias 'edadperro'
+                keyPassword props.getProperty('keystore.password')
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            if (props.getProperty('keystore.password')) {
+                signingConfig signingConfigs.release
+            }
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+
+    buildFeatures {
+        viewBinding true
+        buildConfig true
+    }
+}
+
+dependencies {
+    // Interfaz
+    implementation 'androidx.appcompat:appcompat:1.7.0'
+    implementation 'com.google.android.material:material:1.12.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.core:core-splashscreen:1.0.1'
+    implementation 'androidx.navigation:navigation-fragment:2.8.5'
+    implementation 'androidx.navigation:navigation-ui:2.8.5'
+    implementation 'androidx.recyclerview:recyclerview:1.3.2'
+    implementation 'com.github.bumptech.glide:glide:4.16.0'
+
+    // Firebase (plan gratuito Spark)
+    implementation platform('com.google.firebase:firebase-bom:34.1.0')
+    implementation 'com.google.firebase:firebase-auth'
+    implementation 'com.google.firebase:firebase-firestore'
+    implementation 'com.google.firebase:firebase-ai'
+    // Requeridas por la API de futuros de Firebase AI desde Java
+    implementation 'com.google.guava:guava:33.3.1-android'
+    implementation 'org.reactivestreams:reactive-streams:1.0.4'
+
+    // Mapas y ubicación (OpenStreetMap, sin API key)
+    implementation 'org.osmdroid:osmdroid-android:6.1.20'
+    implementation 'com.google.android.gms:play-services-location:21.3.0'
+
+    // HTTP para Overpass, Nominatim y el backend de pagos
+    implementation 'com.squareup.okhttp3:okhttp:4.12.0'
+
+    testImplementation 'junit:junit:4.13.2'
+    testImplementation 'org.json:json:20240303'
+    androidTestImplementation 'androidx.test.ext:junit:1.2.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.6.1'
+}
