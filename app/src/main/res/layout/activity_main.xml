@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Contenedor principal: barra superior, módulos y navegación inferior (Punto 1) -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fondo"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/fondo" />
+
+    <!-- Aviso visible cuando el dispositivo pierde la conexión -->
+    <TextView
+        android:id="@+id/tvSinConexion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/noche"
+        android:gravity="center"
+        android:padding="6dp"
+        android:text="@string/aviso_sin_conexion"
+        android:textColor="@color/blanco"
+        android:textSize="13sp"
+        android:visibility="gone" />
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/navHost"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        app:defaultNavHost="true"
+        app:navGraph="@navigation/nav_principal" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/navInferior"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/superficie"
+        app:labelVisibilityMode="labeled"
+        app:menu="@menu/menu_inferior" />
+
+</LinearLayout>

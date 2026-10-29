@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+        Identidad visual HuellitasPlus: colores muestreados del logotipo.
+          · Verde del texto "Plus"     #348026  → color principal (botones)
+          · Verde de la almohadilla    #64A532  → acentos e íconos
+          · Turquesa de la almohadilla #64BCC0  → secundario (decorativo)
+          · Naranja de la almohadilla  #E88A48  → acentos (precios, avisos)
+          · Azul noche del texto       #20304E  → títulos
+        Cuando un color se usa para TEXTO se emplea una variante más oscura del
+        mismo tono, para mantener un contraste mínimo de 4.5:1 sobre blanco.
+    -->
+
+    <!-- Verde -->
+    <color name="verde">#348026</color>
+    <color name="verde_claro">#64A532</color>
+    <color name="verde_suave">#E8F3DE</color>
+
+    <!-- Turquesa (la "azul" de la huella) -->
+    <color name="azul">#1B7B82</color>
+    <color name="azul_claro">#64BCC0</color>
+    <color name="azul_suave">#E0F3F3</color>
+
+    <!-- Naranja -->
+    <color name="naranja">#B5561A</color>
+    <color name="naranja_claro">#E88A48</color>
+    <color name="naranja_suave">#FCEBDD</color>
+
+    <!-- Azul noche del texto "Huellitas" -->
+    <color name="noche">#20304E</color>
+    <color name="noche_oscuro">#16223A</color>
+
+    <!-- Urgencias -->
+    <color name="urgencia">#C62828</color>
+    <color name="urgencia_suave">#FDE4E4</color>
+
+    <!-- Fondos y textos -->
+    <color name="fondo">#F6F8F3</color>
+    <color name="superficie">#FFFFFF</color>
+    <color name="fondo_intro">#E2DDDC</color>
+    <color name="borde">#DFE6D8</color>
+    <color name="texto_principal">#1C2A40</color>
+    <color name="texto_secundario">#56637A</color>
+    <color name="blanco">#FFFFFF</color>
+    <color name="burbuja_otro">#FFFFFF</color>
+    <color name="burbuja_mia">#E1F0D3</color>
+
+    <!-- Compatibilidad con la calculadora de la versión 1 -->
+    <color name="separador">#66FFFFFF</color>
+    <color name="blanco_suave">#E6F2DC</color>
+    <color name="etiqueta_fondo">#33000000</color>
+    <color name="acento">@color/verde_claro</color>
+</resources>

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Tema general de la aplicación (Material 3 + tipografía Nunito) -->
+    <style name="Theme.HuellitasPlus" parent="Theme.Material3.Light.NoActionBar">
+        <item name="colorPrimary">@color/verde</item>
+        <item name="colorOnPrimary">@color/blanco</item>
+        <item name="colorPrimaryContainer">@color/verde_suave</item>
+        <item name="colorOnPrimaryContainer">@color/noche</item>
+        <item name="colorSecondary">@color/azul</item>
+        <item name="colorOnSecondary">@color/blanco</item>
+        <item name="colorSecondaryContainer">@color/azul_suave</item>
+        <item name="colorOnSecondaryContainer">@color/noche</item>
+        <item name="colorTertiary">@color/naranja</item>
+        <item name="colorTertiaryContainer">@color/naranja_suave</item>
+        <item name="colorError">@color/urgencia</item>
+        <item name="colorSurface">@color/superficie</item>
+        <item name="colorOnSurface">@color/texto_principal</item>
+        <item name="colorOnSurfaceVariant">@color/texto_secundario</item>
+        <item name="colorOutline">@color/borde</item>
+        <item name="android:colorBackground">@color/fondo</item>
+        <item name="android:windowBackground">@color/fondo</item>
+        <item name="android:statusBarColor">@color/fondo</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:navigationBarColor" tools:targetApi="27">@color/superficie</item>
+        <item name="android:windowLightNavigationBar" tools:targetApi="27">true</item>
+        <item name="android:textColorPrimary">@color/texto_principal</item>
+        <item name="android:textColorSecondary">@color/texto_secundario</item>
+        <item name="android:fontFamily">@font/nunito</item>
+        <item name="fontFamily">@font/nunito</item>
+        <item name="materialButtonStyle">@style/Boton.Principal</item>
+        <item name="textInputStyle">@style/Campo</item>
+        <item name="materialCardViewStyle">@style/Tarjeta</item>
+        <item name="toolbarStyle">@style/BarraSuperior</item>
+    </style>
+
+    <!-- Tema de la pantalla de intro: fondo igual al del video -->
+    <style name="Theme.HuellitasPlus.Intro" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/fondo_intro</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_splash</item>
+        <item name="postSplashScreenTheme">@style/Theme.HuellitasPlus.IntroContenido</item>
+    </style>
+
+    <style name="Theme.HuellitasPlus.IntroContenido" parent="Theme.HuellitasPlus">
+        <item name="android:windowBackground">@color/fondo_intro</item>
+        <item name="android:statusBarColor">@color/fondo_intro</item>
+        <item name="android:navigationBarColor">@color/fondo_intro</item>
+    </style>
+
+    <!-- Botones -->
+    <style name="Boton.Principal" parent="Widget.Material3.Button">
+        <item name="android:minHeight">52dp</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:letterSpacing">0.02</item>
+        <item name="cornerRadius">16dp</item>
+    </style>
+
+    <style name="Boton.Contorno" parent="Widget.Material3.Button.OutlinedButton">
+        <item name="android:minHeight">52dp</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="cornerRadius">16dp</item>
+    </style>
+
+    <style name="Boton.Texto" parent="Widget.Material3.Button.TextButton">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Boton.Urgencia" parent="Boton.Principal">
+        <item name="backgroundTint">@color/urgencia</item>
+        <item name="android:textColor">@color/blanco</item>
+        <item name="iconTint">@color/blanco</item>
+    </style>
+
+    <!-- Campos de texto -->
+    <style name="Campo" parent="Widget.Material3.TextInputLayout.OutlinedBox">
+        <item name="boxCornerRadiusTopStart">14dp</item>
+        <item name="boxCornerRadiusTopEnd">14dp</item>
+        <item name="boxCornerRadiusBottomStart">14dp</item>
+        <item name="boxCornerRadiusBottomEnd">14dp</item>
+        <item name="boxBackgroundColor">@color/superficie</item>
+    </style>
+
+    <!-- Tarjetas -->
+    <style name="Tarjeta" parent="Widget.Material3.CardView.Elevated">
+        <item name="cardCornerRadius">20dp</item>
+        <item name="cardElevation">1dp</item>
+        <item name="cardBackgroundColor">@color/superficie</item>
+    </style>
+
+    <style name="BarraSuperior" parent="Widget.Material3.Toolbar">
+        <item name="titleTextAppearance">@style/Texto.TituloBarra</item>
+    </style>
+
+    <!-- Tipografía -->
+    <style name="Texto.TituloBarra" parent="TextAppearance.Material3.TitleLarge">
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">@font/nunito_extrabold</item>
+        <item name="android:textColor">@color/noche</item>
+    </style>
+
+    <style name="Texto.Titulo" parent="TextAppearance.Material3.HeadlineSmall">
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">@font/nunito_extrabold</item>
+        <item name="android:textColor">@color/noche</item>
+    </style>
+
+    <style name="Texto.Subtitulo" parent="TextAppearance.Material3.TitleMedium">
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">@font/nunito_extrabold</item>
+        <item name="android:textColor">@color/texto_principal</item>
+    </style>
+
+    <style name="Texto.Cuerpo" parent="TextAppearance.Material3.BodyMedium">
+        <item name="android:textColor">@color/texto_secundario</item>
+    </style>
+
+    <style name="Texto.Precio" parent="TextAppearance.Material3.TitleMedium">
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">@font/nunito_extrabold</item>
+        <item name="android:textColor">@color/naranja</item>
+    </style>
+
+    <!-- Compatibilidad: nombre del tema de la versión 1 -->
+    <style name="Theme.EdadPerro" parent="Theme.HuellitasPlus" />
+
+</resources>

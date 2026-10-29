@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Grafo de navegación entre los módulos de la aplicación (Punto 1) -->
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_principal"
+    app:startDestination="@id/inicioFragment">
+
+    <!-- ===== Módulos de la barra inferior ===== -->
+    <fragment
+        android:id="@+id/inicioFragment"
+        android:name="com.usb.edadperro.ui.inicio.InicioFragment"
+        android:label="@string/app_name" />
+    <fragment
+        android:id="@+id/tiendaFragment"
+        android:name="com.usb.edadperro.ui.tienda.TiendaFragment"
+        android:label="@string/titulo_tienda" />
+    <fragment
+        android:id="@+id/asistenteFragment"
+        android:name="com.usb.edadperro.ui.ia.AsistenteFragment"
+        android:label="@string/titulo_asistente" />
+    <fragment
+        android:id="@+id/veterinariasFragment"
+        android:name="com.usb.edadperro.ui.vets.VeterinariasFragment"
+        android:label="@string/titulo_veterinarias" />
+    <fragment
+        android:id="@+id/perfilFragment"
+        android:name="com.usb.edadperro.ui.perfil.PerfilFragment"
+        android:label="@string/titulo_perfil" />
+
+    <!-- ===== Edad del perro y perros registrados ===== -->
+    <fragment
+        android:id="@+id/calculadoraFragment"
+        android:name="com.usb.edadperro.ui.perros.CalculadoraFragment"
+        android:label="@string/titulo_calculadora" />
+    <fragment
+        android:id="@+id/perroFormFragment"
+        android:name="com.usb.edadperro.ui.perros.PerroFormFragment"
+        android:label="@string/titulo_perro" />
+
+    <!-- ===== Cuidados con recordatorio (vacunas, medicamentos, baños…) ===== -->
+    <fragment
+        android:id="@+id/cuidadosFragment"
+        android:name="com.usb.edadperro.ui.cuidados.CuidadosFragment"
+        android:label="@string/titulo_cuidados" />
+    <fragment
+        android:id="@+id/cuidadoFormFragment"
+        android:name="com.usb.edadperro.ui.cuidados.CuidadoFormFragment"
+        android:label="@string/titulo_cuidado" />
+
+    <!-- ===== Marketplace, carrito y pagos ===== -->
+    <fragment
+        android:id="@+id/productoDetalleFragment"
+        android:name="com.usb.edadperro.ui.tienda.ProductoDetalleFragment"
+        android:label="@string/titulo_producto" />
+    <fragment
+        android:id="@+id/carritoFragment"
+        android:name="com.usb.edadperro.ui.carrito.CarritoFragment"
+        android:label="@string/titulo_carrito" />
+    <fragment
+        android:id="@+id/checkoutFragment"
+        android:name="com.usb.edadperro.ui.carrito.CheckoutFragment"
+        android:label="@string/titulo_checkout" />
+    <fragment
+        android:id="@+id/pagoWompiFragment"
+        android:name="com.usb.edadperro.ui.pago.PagoWompiFragment"
+        android:label="@string/titulo_pago" />
+    <fragment
+        android:id="@+id/pedidoDetalleFragment"
+        android:name="com.usb.edadperro.ui.pago.PedidoDetalleFragment"
+        android:label="@string/titulo_pedido" />
+    <fragment
+        android:id="@+id/pedidosFragment"
+        android:name="com.usb.edadperro.ui.pago.PedidosFragment"
+        android:label="@string/titulo_pedidos" />
+
+    <!-- ===== Chat entre usuarios ===== -->
+    <fragment
+        android:id="@+id/chatsFragment"
+        android:name="com.usb.edadperro.ui.chat.ChatsFragment"
+        android:label="@string/titulo_chats" />
+    <fragment
+        android:id="@+id/usuariosFragment"
+        android:name="com.usb.edadperro.ui.chat.UsuariosFragment"
+        android:label="@string/titulo_usuarios" />
+    <fragment
+        android:id="@+id/conversacionFragment"
+        android:name="com.usb.edadperro.ui.chat.ConversacionFragment"
+        android:label="@string/titulo_conversacion" />
+
+    <!-- ===== Perfil y administración ===== -->
+    <fragment
+        android:id="@+id/editarPerfilFragment"
+        android:name="com.usb.edadperro.ui.perfil.EditarPerfilFragment"
+        android:label="@string/titulo_editar_perfil" />
+    <fragment
+        android:id="@+id/adminProductosFragment"
+        android:name="com.usb.edadperro.ui.admin.AdminProductosFragment"
+        android:label="@string/titulo_admin" />
+    <fragment
+        android:id="@+id/productoFormFragment"
+        android:name="com.usb.edadperro.ui.admin.ProductoFormFragment"
+        android:label="@string/titulo_producto_form" />
+
+</navigation>

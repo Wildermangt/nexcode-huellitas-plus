@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Tarjeta de un perro registrado -->
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="8dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="14dp">
+
+        <ImageView
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/fondo_redondeado"
+            android:backgroundTint="@color/naranja_suave"
+            android:contentDescription="@null"
+            android:padding="10dp"
+            android:src="@drawable/ic_huella"
+            app:tint="@color/naranja" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvNombre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/Texto.Subtitulo"
+                tools:text="Max" />
+
+            <TextView
+                android:id="@+id/tvDatos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/Texto.Cuerpo"
+                tools:text="Labrador · 5 años · Grande" />
+
+            <TextView
+                android:id="@+id/tvEdadHumana"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:textColor="@color/verde"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                tools:text="42 años humanos · Adulto" />
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_siguiente" />
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

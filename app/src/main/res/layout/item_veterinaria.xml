@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Veterinaria: nombre, urgencias, dirección, teléfono, distancia y acciones -->
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="8dp"
+    app:cardElevation="0dp"
+    app:strokeColor="@color/borde"
+    app:strokeWidth="1dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="14dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvNombre"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textAppearance="@style/Texto.Subtitulo"
+                android:textSize="15sp"
+                tools:text="Clínica Veterinaria Zoovida" />
+
+            <TextView
+                android:id="@+id/tvDistancia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/azul"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                tools:text="850 m" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvUrgencias"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/fondo_chip_urgencia"
+            android:paddingStart="8dp"
+            android:paddingTop="2dp"
+            android:paddingEnd="8dp"
+            android:paddingBottom="2dp"
+            android:text="@string/urgencias_24h_verificado"
+            android:textColor="@color/urgencia"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            android:visibility="gone"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/tvDireccion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:drawablePadding="6dp"
+            android:textColor="@color/texto_principal"
+            android:textSize="13sp"
+            app:drawableStartCompat="@drawable/ic_ubicacion"
+            app:drawableTint="@color/texto_secundario"
+            tools:text="Calle 93 # 15-20, Bogotá" />
+
+        <TextView
+            android:id="@+id/tvTelefono"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:drawablePadding="6dp"
+            android:textColor="@color/texto_principal"
+            android:textSize="13sp"
+            app:drawableStartCompat="@drawable/ic_telefono"
+            app:drawableTint="@color/texto_secundario"
+            tools:text="+57 601 555 1234" />
+
+        <TextView
+            android:id="@+id/tvHorario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:drawablePadding="6dp"
+            android:textColor="@color/texto_secundario"
+            android:textSize="12sp"
+            android:visibility="gone"
+            app:drawableStartCompat="@drawable/ic_pendiente"
+            app:drawableTint="@color/texto_secundario"
+            tools:text="Mo-Su 00:00-24:00"
+            tools:visibility="visible" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:orientation="horizontal">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnLlamar"
+                style="@style/Boton.Texto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:paddingHorizontal="8dp"
+                android:text="@string/llamar"
+                app:icon="@drawable/ic_telefono" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnComoLlegar"
+                style="@style/Boton.Texto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:paddingHorizontal="8dp"
+                android:text="@string/como_llegar"
+                app:icon="@drawable/ic_como_llegar" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnVerOsm"
+                style="@style/Boton.Texto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:paddingHorizontal="8dp"
+                android:text="@string/fuente" />
+        </LinearLayout>
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

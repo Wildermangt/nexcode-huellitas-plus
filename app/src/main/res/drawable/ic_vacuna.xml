@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Jeringa: vacuna -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:tint="?attr/colorControlNormal"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <group
+        android:pivotX="12"
+        android:pivotY="12"
+        android:rotation="45">
+        <path
+            android:fillColor="@android:color/white"
+            android:fillType="evenOdd"
+            android:pathData="M9,1.5h6v2h-6zM11,3.5h2v3h-2zM7.5,6.5h9v11h-9zM9.5,8.5v7h5v-7zM10,17.5h4v2h-4zM11.4,19.5h1.2v4h-1.2z" />
+    </group>
+</vector>

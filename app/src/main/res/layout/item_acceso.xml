@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Botón de acceso rápido a un módulo (pantalla de Inicio) -->
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_columnWeight="1"
+    android:layout_margin="4dp"
+    app:cardCornerRadius="18dp"
+    app:cardElevation="0dp"
+    app:strokeColor="@color/borde"
+    app:strokeWidth="1dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingTop="14dp"
+        android:paddingBottom="12dp">
+
+        <ImageView
+            android:id="@+id/icono"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:background="@drawable/fondo_redondeado"
+            android:backgroundTint="@color/verde_suave"
+            android:contentDescription="@null"
+            android:padding="10dp"
+            app:tint="@color/verde"
+            tools:src="@drawable/ic_calculadora" />
+
+        <TextView
+            android:id="@+id/titulo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:gravity="center"
+            android:maxLines="2"
+            android:paddingStart="4dp"
+            android:paddingEnd="4dp"
+            android:textColor="@color/texto_principal"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            tools:text="Edad del perro" />
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

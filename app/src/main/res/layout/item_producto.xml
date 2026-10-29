@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Tarjeta de producto del catálogo -->
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="6dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="12dp">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:background="@drawable/fondo_redondeado"
+            android:backgroundTint="@color/fondo">
+
+            <ImageView
+                android:id="@+id/ivProducto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/desc_imagen_producto"
+                android:padding="8dp"
+                tools:src="@drawable/ic_imagen" />
+
+            <TextView
+                android:id="@+id/tvCategoria"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top|start"
+                android:layout_margin="6dp"
+                android:background="@drawable/fondo_redondeado"
+                android:backgroundTint="@color/azul_suave"
+                android:paddingStart="8dp"
+                android:paddingTop="2dp"
+                android:paddingEnd="8dp"
+                android:paddingBottom="2dp"
+                android:textColor="@color/azul"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                tools:text="Snacks" />
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/tvMarca"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textAllCaps="true"
+            android:textColor="@color/texto_secundario"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            tools:text="Royal Canin" />
+
+        <TextView
+            android:id="@+id/tvNombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:lines="2"
+            android:textColor="@color/texto_principal"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            tools:text="Medium Adult" />
+
+        <TextView
+            android:id="@+id/tvPresentacion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/Texto.Cuerpo"
+            android:textSize="12sp"
+            tools:text="Bulto 12 kg" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvPrecio"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textAppearance="@style/Texto.Precio"
+                tools:text="$ 369.900" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvStock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            tools:text="8 disponibles"
+            tools:textColor="@color/verde" />
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

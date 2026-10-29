@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Carpetas que FileProvider puede compartir (solo los comprobantes PDF) -->
+<paths>
+    <cache-path
+        name="comprobantes"
+        path="comprobantes/" />
+</paths>

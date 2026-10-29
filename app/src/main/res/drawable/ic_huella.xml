@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Icono de huella de perro usado dentro del campo de texto -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24"
+    android:tint="?attr/colorControlNormal">
+
+    <path
+        android:fillColor="@android:color/white"
+        android:pathData="M4.5,12.5m-2.2,0a2.2,2.2 0 1,0 4.4,0a2.2,2.2 0 1,0 -4.4,0" />
+    <path
+        android:fillColor="@android:color/white"
+        android:pathData="M9,7.5m-2.2,0a2.2,2.2 0 1,0 4.4,0a2.2,2.2 0 1,0 -4.4,0" />
+    <path
+        android:fillColor="@android:color/white"
+        android:pathData="M15,7.5m-2.2,0a2.2,2.2 0 1,0 4.4,0a2.2,2.2 0 1,0 -4.4,0" />
+    <path
+        android:fillColor="@android:color/white"
+        android:pathData="M19.5,12.5m-2.2,0a2.2,2.2 0 1,0 4.4,0a2.2,2.2 0 1,0 -4.4,0" />
+    <path
+        android:fillColor="@android:color/white"
+        android:pathData="M12,13.2c-2.6,0 -5.2,2.4 -5.2,4.9c0,1.6 1.2,2.6 2.8,2.6c1,0 1.7,-0.4 2.4,-0.4c0.7,0 1.4,0.4 2.4,0.4c1.6,0 2.8,-1 2.8,-2.6C17.2,15.6 14.6,13.2 12,13.2z" />
+
+</vector>

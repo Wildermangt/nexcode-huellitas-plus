@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Línea del carrito: producto, precio unitario, cantidad y subtotal -->
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="12dp">
+
+        <ImageView
+            android:id="@+id/ivProducto"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:background="@drawable/fondo_redondeado"
+            android:backgroundTint="@color/fondo"
+            android:contentDescription="@string/desc_imagen_producto"
+            android:padding="4dp"
+            tools:src="@drawable/ic_imagen" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tvNombre"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textColor="@color/texto_principal"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    tools:text="Royal Canin Medium Adult" />
+
+                <ImageButton
+                    android:id="@+id/btnEliminar"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="@string/eliminar"
+                    android:src="@drawable/ic_borrar"
+                    app:tint="@color/texto_secundario" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvUnitario"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/Texto.Cuerpo"
+                android:textSize="12sp"
+                tools:text="Bulto 12 kg · $ 369.900 c/u" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnMenos"
+                    style="@style/Widget.Material3.Button.IconButton.Outlined"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:contentDescription="@string/disminuir"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    app:icon="@drawable/ic_menos"
+                    app:iconSize="18dp" />
+
+                <TextView
+                    android:id="@+id/tvCantidad"
+                    android:layout_width="36dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    tools:text="2" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnMas"
+                    style="@style/Widget.Material3.Button.IconButton.Outlined"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:contentDescription="@string/aumentar"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    app:icon="@drawable/ic_mas"
+                    app:iconSize="18dp" />
+
+                <TextView
+                    android:id="@+id/tvSubtotal"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="end"
+                    android:textAppearance="@style/Texto.Precio"
+                    android:textSize="15sp"
+                    tools:text="$ 739.800" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

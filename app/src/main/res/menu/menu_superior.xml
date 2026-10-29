@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Accesos fijos de la barra superior: urgencias y carrito -->
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/accionUrgencias"
+        android:icon="@drawable/ic_urgencia"
+        android:title="@string/urgencias"
+        app:iconTint="@color/urgencia"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/accionCarrito"
+        android:icon="@drawable/ic_carrito"
+        android:title="@string/carrito"
+        app:iconTint="@color/noche"
+        app:showAsAction="always" />
+</menu>

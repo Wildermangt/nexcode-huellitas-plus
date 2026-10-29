@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">HuellitasPlus</string>
+    <string name="lema">Todo para el cuidado de tu perro: salud, alimento y comunidad.</string>
+    <string name="desc_logo">Logotipo de HuellitasPlus</string>
+    <string name="desc_logo_nexcode">Logotipo de Nexcode Corporation</string>
+    <string name="desarrollado_por">Desarrollado por</string>
+    <string name="creditos">HuellitasPlus 2.0 · Nexcode Corporation\nUniversidad de San Buenaventura · Optativa II – Desarrollo Móvil\nJeferson W. González Tenjo · José L. Ocampo Camacho</string>
+    <string name="omitir">Omitir</string>
+    <string name="falta_firebase_titulo">Falta configurar Firebase</string>
+    <string name="falta_firebase_mensaje">Esta versión de la app no tiene el archivo google-services.json. Descárgalo desde la consola de Firebase, cópialo en EdadPerro/app/ y vuelve a compilar.</string>
+
+    <!-- Navegación -->
+    <string name="nav_inicio">Inicio</string>
+    <string name="nav_tienda">Tienda</string>
+    <string name="nav_asistente">Asistente</string>
+    <string name="nav_veterinarias">Veterinarias</string>
+    <string name="nav_perfil">Perfil</string>
+    <string name="titulo_tienda">Tienda de alimentos</string>
+    <string name="titulo_asistente">Asistente IA</string>
+    <string name="titulo_veterinarias">Veterinarias y urgencias</string>
+    <string name="titulo_perfil">Mi perfil</string>
+    <string name="titulo_calculadora">Edad del perro</string>
+    <string name="titulo_perro">Registrar perro</string>
+    <string name="titulo_editar_perro">Editar perro</string>
+    <string name="titulo_producto">Producto</string>
+    <string name="titulo_carrito">Carrito de compras</string>
+    <string name="titulo_checkout">Confirmar pedido</string>
+    <string name="titulo_pago">Pago seguro</string>
+    <string name="titulo_pedido">Detalle del pedido</string>
+    <string name="titulo_pedidos">Mis pedidos</string>
+    <string name="titulo_chats">Mensajes</string>
+    <string name="titulo_usuarios">Nueva conversación</string>
+    <string name="titulo_conversacion">Conversación</string>
+    <string name="titulo_editar_perfil">Editar perfil</string>
+    <string name="titulo_admin">Administrar productos</string>
+    <string name="titulo_producto_form">Nuevo producto</string>
+    <string name="urgencias">Urgencias</string>
+    <string name="carrito">Carrito</string>
+    <string name="aviso_sin_conexion">Sin conexión. Algunas funciones no están disponibles.</string>
+
+    <!-- Comunes -->
+    <string name="guardar">Guardar</string>
+    <string name="guardar_cambios">Guardar cambios</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="eliminar">Eliminar</string>
+    <string name="confirmar">Confirmar</string>
+    <string name="entendido">Entendido</string>
+    <string name="agregar">Agregar</string>
+    <string name="cerrar">Cerrar</string>
+    <string name="revisar">Revisar</string>
+    <string name="reintentar">Reintentar</string>
+    <string name="salir">Salir</string>
+    <string name="cargar">Cargar</string>
+    <string name="enviar">Enviar</string>
+    <string name="tu">Tú</string>
+    <string name="accion_irreversible">Esta acción no se puede deshacer.</string>
+    <string name="sin_app_para_abrir">No hay una aplicación instalada para abrir esto.</string>
+    <string name="aumentar">Aumentar cantidad</string>
+    <string name="disminuir">Disminuir cantidad</string>
+
+    <!-- Autenticación -->
+    <string name="iniciar_sesion">Iniciar sesión</string>
+    <string name="entrar">Entrar</string>
+    <string name="correo">Correo electrónico</string>
+    <string name="contrasena">Contraseña</string>
+    <string name="confirmar_contrasena">Confirmar contraseña</string>
+    <string name="ayuda_clave">Mínimo 6 caracteres</string>
+    <string name="olvide_clave">¿Olvidaste tu contraseña?</string>
+    <string name="no_tienes_cuenta">¿Aún no tienes cuenta?</string>
+    <string name="crear_cuenta">Crear cuenta</string>
+    <string name="registro_subtitulo">Regístrate para guardar tus perros, comprar y conversar con otros dueños.</string>
+    <string name="nombre_completo">Nombre completo</string>
+    <string name="ciudad">Ciudad</string>
+    <string name="acepto_datos">Autorizo el tratamiento de mis datos personales para el uso de la app (Ley 1581 de 2012).</string>
+    <string name="correo_recuperacion_enviado">Te enviamos un correo para restablecer la contraseña.</string>
+    <string name="error_correo">Ingresa un correo válido</string>
+    <string name="error_correo_para_recuperar">Escribe tu correo para enviarte el enlace</string>
+    <string name="error_clave_vacia">Ingresa tu contraseña</string>
+    <string name="error_clave_corta">La contraseña debe tener al menos 6 caracteres</string>
+    <string name="error_claves_distintas">Las contraseñas no coinciden</string>
+    <string name="error_nombre">Ingresa tu nombre (mínimo 3 letras)</string>
+    <string name="error_ciudad">Ingresa la ciudad</string>
+    <string name="error_acepto_datos">Debes autorizar el tratamiento de datos para crear la cuenta</string>
+
+    <!-- Inicio -->
+    <string name="saludo">Hola, %1$s</string>
+    <string name="inicio_lema">¿Qué necesita tu perro hoy?</string>
+    <string name="inicio_urgencia_titulo">¿Tu perro tiene una emergencia?</string>
+    <string name="inicio_urgencia_texto">Encuentra veterinarias de urgencias cerca de ti.</string>
+    <string name="inicio_modulos">Servicios</string>
+    <string name="acceso_calculadora">Edad del perro</string>
+    <string name="acceso_tienda">Tienda</string>
+    <string name="acceso_asistente">Asistente IA</string>
+    <string name="acceso_veterinarias">Veterinarias</string>
+    <string name="acceso_chats">Mensajes</string>
+    <string name="acceso_pedidos">Mis pedidos</string>
+    <string name="mis_perros">Mis perros</string>
+    <string name="sin_perros">Aún no registras perros. Toca «Agregar» para registrar el primero.</string>
+
+    <!-- Calculadora (versión 1) -->
+    <string name="titulo_app">Edad del perro vs. edad humana</string>
+    <string name="subtitulo_app">Calcula la equivalencia aproximada en años humanos</string>
+    <string name="usar_perro_registrado">Usar los datos de:</string>
+    <string name="hint_edad">Edad del perro (años)</string>
+    <string name="ayuda_edad">Puedes usar decimales, por ejemplo 0.5</string>
+    <string name="label_tamano">Tamaño de la raza</string>
+    <string name="tamano_pequeno">Pequeño (hasta 10 kg)</string>
+    <string name="tamano_mediano">Mediano (10 a 25 kg)</string>
+    <string name="tamano_grande">Grande (más de 25 kg)</string>
+    <string name="tamano_pequeno_corto">Pequeño</string>
+    <string name="tamano_mediano_corto">Mediano</string>
+    <string name="tamano_grande_corto">Grande</string>
+    <string name="btn_calcular">CALCULAR</string>
+    <string name="btn_limpiar">LIMPIAR</string>
+    <string name="label_resultado">Equivale a</string>
+    <string name="label_anos_humanos">años humanos</string>
+    <string name="etapa_prefijo">Etapa: %1$s</string>
+    <string name="etapa_cachorro">Cachorro</string>
+    <string name="etapa_joven">Joven</string>
+    <string name="etapa_adulto">Adulto</string>
+    <string name="etapa_senior">Senior</string>
+    <string name="detalle_resultado">Un perro de %1$s año(s) equivale a %2$s años humanos según el método veterinario.</string>
+    <string name="comparacion_tradicional">Método tradicional (x7): %1$s años</string>
+    <string name="comparacion_epigenetico">Fórmula científica 2020: %1$s años</string>
+    <string name="recomendaciones">Recomendaciones para esta etapa</string>
+    <string name="aviso_veterinario">Orientación general. No reemplaza la valoración de un médico veterinario.</string>
+    <string name="guardar_como_perro">Guardar como mi perro</string>
+    <string name="error_vacio">Debe ingresar la edad del perro</string>
+    <string name="error_no_numerico">Ingrese un número válido</string>
+    <string name="error_mayor_cero">La edad debe ser mayor que cero</string>
+    <string name="error_maximo">La edad no puede superar los %1$d años</string>
+
+    <!-- Perros -->
+    <string name="nombre_perro">Nombre del perro</string>
+    <string name="raza">Raza (opcional)</string>
+    <string name="edad_anos">Edad (años)</string>
+    <string name="peso_kg">Peso (kg, opcional)</string>
+    <string name="sexo">Sexo</string>
+    <string name="macho">Macho</string>
+    <string name="hembra">Hembra</string>
+    <string name="notas_perro">Notas: alergias, condiciones, carácter…</string>
+    <string name="eliminar_perro">Eliminar perro</string>
+    <string name="eliminar_perro_pregunta">¿Eliminar a %1$s?</string>
+    <string name="perro_guardado">%1$s quedó guardado</string>
+    <string name="error_nombre_perro">Ingresa el nombre del perro</string>
+    <string name="error_edad_perro">Ingresa una edad entre 0.1 y %1$d años</string>
+    <string name="error_peso">Ingresa un peso válido (0 a 120 kg)</string>
+    <string name="mis_perros_detalle">Registra y consulta la edad de tus perros</string>
+
+    <!-- Cuidados y recordatorios (vacunas, desparasitantes, medicamentos, baño, corte de pelo) -->
+    <string name="titulo_cuidados">Cuidados y recordatorios</string>
+    <string name="titulo_cuidado">Nuevo cuidado</string>
+    <string name="titulo_editar_cuidado">Editar cuidado</string>
+    <string name="inicio_cuidados_titulo">Vacunas, medicinas y baños</string>
+    <string name="inicio_cuidados_vacio">Programa recordatorios con alarma para tu perro.</string>
+    <string name="inicio_cuidados_proximo">Próximo: %1$s de %2$s · %3$s</string>
+    <string name="inicio_cuidados_vencidos">%1$d pendiente(s) por registrar</string>
+    <string name="cuidados_encabezado">Toca un cuidado para editarlo · mantén presionado para marcarlo como hecho.</string>
+    <string name="sin_cuidados">Aún no tienes cuidados programados.\nToca «Nuevo cuidado» para crear el primer recordatorio.</string>
+    <string name="nuevo_cuidado">Nuevo cuidado</string>
+    <string name="cuidado_perro">¿Para qué perro?</string>
+    <string name="cuidado_sin_perros">Primero registra un perro desde Inicio › Mis perros.</string>
+    <string name="cuidado_tipo">Tipo de cuidado</string>
+    <string name="cuidado_nombre">Nombre</string>
+    <string name="ayuda_vacuna">Ej. Rabia, Parvovirus, Moquillo, Polivalente</string>
+    <string name="ayuda_desparasitante">Ej. Drontal Plus, Bravecto, NexGard</string>
+    <string name="ayuda_medicamento">Ej. Amoxicilina 250 mg (indica la dosis en las notas)</string>
+    <string name="ayuda_opcional">Opcional. Ej. Peluquería canina, baño medicado</string>
+    <string name="ayuda_otro">Ej. Control veterinario, limpieza dental</string>
+    <string name="cuidado_notas">Notas: dosis, veterinaria, lote… (opcional)</string>
+    <string name="cuidado_cuando">Fecha y hora de la próxima vez</string>
+    <string name="cuidado_avisar">Alarma</string>
+    <string name="cuidado_se_repite">Se repite</string>
+    <string name="cuidado_cada">Cada</string>
+    <string name="cuidado_sonara">Sonará el %1$s a las %2$s</string>
+    <string name="cuidado_y_antes">" (aviso previo: %1$s)"</string>
+    <string name="cuidado_repeticion_invalida">Indica cada cuánto se repite</string>
+    <string name="cuidado_elige_fecha">Fecha de la próxima vez</string>
+    <string name="cuidado_elige_hora">Hora de la alarma</string>
+    <string name="cuidado_historial">Historial de aplicaciones</string>
+    <string name="cuidado_sin_historial">Aún no se ha registrado ninguna aplicación.</string>
+    <string name="cuidado_marcar_hecho">Marcar como hecho</string>
+    <string name="cuidado_eliminar">Eliminar cuidado</string>
+    <string name="cuidado_programado">Alarma programada para el %1$s</string>
+    <string name="cuidado_registrado">Registrado en el historial</string>
+    <string name="cuidado_hecho_el">Hecho el %1$s</string>
+    <string name="cuidado_hecho_pregunta">¿Registrar «%1$s» como hecho?</string>
+    <string name="cuidado_hecho_siguiente">Se guardará en el historial y la próxima alarma sonará el %1$s.</string>
+    <string name="cuidado_hecho_sin_repetir">Se guardará en el historial. Como no se repite, quedará completado.</string>
+    <string name="eliminar_cuidado_pregunta">¿Eliminar «%1$s»?</string>
+    <string name="eliminar_cuidado_detalle">Se borrará su historial y se cancelarán sus alarmas.</string>
+    <string name="error_nombre_cuidado">Escribe el nombre (vacuna, producto o medicamento)</string>
+    <string name="error_cada">Ingresa un número entre 1 y %1$d</string>
+    <string name="error_fecha_pasada">Elige una fecha y hora que aún no hayan pasado</string>
+    <string name="estado_cuidado_vencido">Pendiente</string>
+    <string name="estado_cuidado_hoy">Hoy</string>
+    <string name="estado_cuidado_pronto">Esta semana</string>
+    <string name="estado_cuidado_completado">Completado</string>
+    <string name="aviso_activar_notificaciones">⚠ Las alarmas están desactivadas. Toca aquí para permitir las notificaciones.</string>
+    <string name="aviso_alarmas_exactas">⚠ Las alarmas pueden sonar con retraso. Toca aquí y activa «Alarmas y recordatorios».</string>
+    <string name="aviso_notificaciones_negadas">Sin notificaciones las alarmas no pueden sonar.</string>
+    <string name="ajustes">Ajustes</string>
+    <string name="canal_alarmas">Alarmas de cuidados</string>
+    <string name="canal_alarmas_detalle">Vacunas, desparasitantes, medicamentos, baños y cortes de pelo programados.</string>
+    <string name="alarma_es_hora">Es hora · %1$s</string>
+    <string name="alarma_aviso_previo">Recordatorio · programado para el %1$s</string>
+    <string name="alarma_hecho">Hecho</string>
+    <string name="alarma_posponer">Posponer %1$d min</string>
+    <string name="alarma_pospuesta">Te recordaremos en %1$d minutos</string>
+    <string name="alarma_detener">Detener alarma</string>
+
+    <!-- Tienda -->
+    <string name="buscar_productos">Buscar por nombre o marca</string>
+    <string name="todas">Todas</string>
+    <string name="aviso_tienda">Solo alimentos para perros: concentrados, alimentos húmedos y snacks.</string>
+    <string name="catalogo_vacio">El catálogo está vacío. Un administrador debe cargar los productos.</string>
+    <string name="sin_resultados">No encontramos productos con ese filtro.</string>
+    <string name="desc_imagen_producto">Imagen del producto</string>
+    <string name="agotado">Agotado</string>
+    <string name="disponibles">%1$d disponibles</string>
+    <string name="pocas_unidades">¡Solo quedan %1$d!</string>
+    <string name="descripcion">Descripción</string>
+    <string name="credito_imagenes">Imágenes de referencia: Open Pet Food Facts (CC BY-SA). Precios de referencia para el ambiente de pruebas.</string>
+    <string name="agregar_al_carrito">Agregar al carrito</string>
+    <string name="agregado_al_carrito">Listo: tienes %1$d en el carrito</string>
+    <string name="ver_carrito">Ver carrito</string>
+    <string name="producto_no_disponible">Este producto ya no está disponible.</string>
+
+    <!-- Carrito y checkout -->
+    <string name="carrito_vacio">Tu carrito está vacío.</string>
+    <string name="ir_a_la_tienda">Ir a la tienda</string>
+    <string name="subtotal">Subtotal</string>
+    <string name="envio">Envío</string>
+    <string name="total">Total</string>
+    <string name="gratis">Gratis</string>
+    <string name="falta_envio_gratis">Te faltan %1$s para el envío gratis</string>
+    <string name="continuar_compra">Continuar con la compra</string>
+    <string name="quitar_del_carrito">¿Quitar del carrito?</string>
+    <string name="quitar">Quitar</string>
+    <string name="carrito_actualizado">Actualizamos tu carrito</string>
+    <string name="direccion_entrega">Dirección de entrega</string>
+    <string name="direccion">Dirección</string>
+    <string name="ayuda_direccion">Ej. Calle 10 # 5-20, apto 301</string>
+    <string name="telefono">Teléfono</string>
+    <string name="notas_entrega">Indicaciones para la entrega (opcional)</string>
+    <string name="guardar_direccion">Guardar esta dirección en mi perfil</string>
+    <string name="resumen_compra">Resumen de la compra</string>
+    <string name="confirmar_pedido">Confirmar pedido</string>
+    <string name="confirmar_pedido_pregunta">¿Confirmar el pedido?</string>
+    <string name="confirmar_pedido_detalle">%1$d producto(s) por un total de %2$s.\nEntrega en: %3$s.\n\nDespués de confirmar pasarás al pago.</string>
+    <string name="no_se_confirmo">No se pudo confirmar el pedido</string>
+    <string name="volver_al_carrito">Volver al carrito</string>
+    <string name="error_direccion">Ingresa una dirección completa</string>
+    <string name="error_telefono">Ingresa un teléfono válido</string>
+
+    <!-- Pedidos y pagos -->
+    <string name="pedido_creado">Pedido creado. Ahora puedes pagarlo.</string>
+    <string name="pagar_con_wompi">Pagar con Wompi</string>
+    <string name="aviso_sandbox">Ambiente de pruebas (sandbox): no se realizan cobros reales.</string>
+    <string name="verificar_pago">Consultar estado del pago</string>
+    <string name="volver_a_comprar">Volver a comprar estos productos</string>
+    <string name="comprobante">Comprobante de la transacción</string>
+    <string name="productos">Productos</string>
+    <string name="transaccion">Pago</string>
+    <string name="descargar_comprobante">Descargar comprobante (PDF)</string>
+    <string name="compartir_comprobante">Guardar o compartir comprobante</string>
+    <string name="error_pdf">No se pudo generar el comprobante.</string>
+    <string name="numero_pedido">Pedido</string>
+    <string name="fecha">Fecha</string>
+    <string name="cliente">Cliente</string>
+    <string name="entrega">Entrega</string>
+    <string name="estado">Estado</string>
+    <string name="proveedor">Pasarela</string>
+    <string name="referencia">Referencia</string>
+    <string name="id_transaccion">Id de transacción</string>
+    <string name="estado_pago">Estado del pago</string>
+    <string name="metodo">Método</string>
+    <string name="monto">Monto</string>
+    <string name="sin_intentos_pago">Sin intentos de pago</string>
+    <string name="estado_aprobado">Pago aprobado</string>
+    <string name="estado_aprobado_detalle">Tu pedido fue pagado y está en preparación.</string>
+    <string name="estado_rechazado">Pago rechazado</string>
+    <string name="estado_rechazado_detalle">El pago no fue aprobado. Los productos volvieron al inventario; puedes intentarlo de nuevo.</string>
+    <string name="estado_pendiente">Pago pendiente</string>
+    <string name="estado_pendiente_detalle">Wompi está procesando el pago. Esta pantalla se actualizará sola cuando haya respuesta.</string>
+    <string name="estado_sin_pagar">Pendiente de pago</string>
+    <string name="estado_sin_pagar_detalle">Tu pedido está reservado. Completa el pago para procesarlo.</string>
+    <string name="pagos_no_configurados">El servidor de pagos aún no está configurado (huellita.backendUrl).</string>
+    <string name="sin_transaccion">Aún no hay una transacción para consultar.</string>
+    <string name="preparando_pago">Preparando el pago seguro…</string>
+    <string name="no_se_pudo_iniciar_pago">No se pudo iniciar el pago</string>
+    <string name="salir_del_pago">¿Salir del pago?</string>
+    <string name="salir_del_pago_detalle">Si ya enviaste el pago, su estado se actualizará en el pedido.</string>
+    <string name="seguir_pagando">Seguir pagando</string>
+    <string name="sin_pedidos">Aún no tienes pedidos.</string>
+    <string name="pedido_numero">Pedido %1$s</string>
+    <string name="unidades">%1$d unidades</string>
+    <string name="mis_pedidos">Mis pedidos</string>
+    <string name="mis_pedidos_detalle">Historial, estado de pago y comprobantes</string>
+
+    <!-- Asistente IA -->
+    <string name="aviso_ia">La IA da orientación general y no sustituye la valoración de un médico veterinario.</string>
+    <string name="urgencia_titulo">Posible urgencia</string>
+    <string name="urgencia_texto">Busca atención veterinaria profesional de inmediato.</string>
+    <string name="ver_urgencias_cercanas">Ver veterinarias de urgencias cercanas</string>
+    <string name="escribe_pregunta">Escribe tu pregunta</string>
+    <string name="escribiendo">Escribiendo…</string>
+    <string name="sugerencia_1">¿Qué alimento le doy a un cachorro?</string>
+    <string name="sugerencia_2">¿Cada cuánto bañar a mi perro?</string>
+    <string name="sugerencia_3">Calendario de vacunas</string>
+    <string name="sugerencia_4">¿Cómo cuidar sus dientes?</string>
+
+    <!-- Veterinarias -->
+    <string name="buscar_ciudad_direccion">Buscar por ciudad o dirección</string>
+    <string name="usar_mi_ubicacion">Usar mi ubicación</string>
+    <string name="todas_veterinarias">Todas</string>
+    <string name="solo_urgencias">Urgencias 24 h</string>
+    <string name="atribucion_osm">© colaboradores de OpenStreetMap</string>
+    <string name="urgencias_24h_verificado">URGENCIAS 24 H (dato OSM)</string>
+    <string name="consultar_direccion">Dirección no registrada en OSM · toca para consultarla</string>
+    <string name="direccion_no_disponible">Dirección no disponible</string>
+    <string name="telefono_no_registrado">Teléfono no registrado en OpenStreetMap</string>
+    <string name="llamar">Llamar</string>
+    <string name="buscar_telefono">Buscar teléfono</string>
+    <string name="como_llegar">Cómo llegar</string>
+    <string name="buscar_en_google_maps">Ver en Google Maps</string>
+    <string name="fuente">Fuente</string>
+    <string name="sin_permiso_ubicacion">Sin permiso de ubicación. Busca por ciudad o dirección.</string>
+    <string name="obteniendo_ubicacion">Obteniendo tu ubicación…</string>
+    <string name="ubicacion_no_disponible">No se pudo obtener la ubicación. Activa el GPS o busca por ciudad.</string>
+    <string name="tu_ubicacion">tu ubicación</string>
+    <string name="buscando_veterinarias">Buscando veterinarias en OpenStreetMap…</string>
+    <string name="resumen_veterinarias">%1$d veterinarias a %2$d km de %3$s · %4$d con urgencias 24 h verificadas</string>
+    <string name="lugar_no_encontrado">No encontramos «%1$s». Prueba con otra ciudad o dirección.</string>
+    <string name="error_busqueda_corta">Escribe al menos 3 letras</string>
+    <string name="sin_urgencias_verificadas">No hay urgencias 24 h verificadas en esta zona. Revisa la lista completa y llama antes de ir.</string>
+
+    <!-- Chat entre usuarios -->
+    <string name="chats_encabezado">Conversa con otros dueños de perros de la comunidad.</string>
+    <string name="nuevo_chat">Nuevo chat</string>
+    <string name="sin_chats">Aún no tienes conversaciones.</string>
+    <string name="usuarios_encabezado">Usuarios registrados (solo se muestra nombre y ciudad).</string>
+    <string name="sin_usuarios">Aún no hay otros usuarios registrados.</string>
+    <string name="aviso_privacidad_chat">Solo tú y la otra persona pueden ver esta conversación.</string>
+    <string name="conversacion_vacia">Escribe el primer mensaje.</string>
+    <string name="escribe_mensaje">Escribe un mensaje</string>
+    <string name="enviando">Enviando…</string>
+    <string name="mensajes">Mensajes</string>
+    <string name="mensajes_detalle">Chat con otros usuarios</string>
+    <string name="bloquear">Bloquear</string>
+    <string name="desbloquear">Desbloquear</string>
+    <string name="bloquear_usuario">Bloquear usuario</string>
+    <string name="desbloquear_usuario">Desbloquear usuario</string>
+    <string name="reportar_usuario">Reportar usuario</string>
+    <string name="reportar">Reportar</string>
+    <string name="reportar_a">Reportar a %1$s</string>
+    <string name="bloquear_pregunta">¿Bloquear a %1$s?</string>
+    <string name="bloquear_detalle">Ninguno de los dos podrá enviar mensajes en esta conversación. Puedes desbloquearlo cuando quieras.</string>
+    <string name="bloqueaste_usuario">Bloqueaste a este usuario: no se pueden enviar mensajes.</string>
+    <string name="no_puedes_escribir">No puedes enviar mensajes a este usuario.</string>
+    <string name="reporte_enviado">Reporte enviado. El equipo de HuellitasPlus lo revisará.</string>
+    <string name="bloqueado">Bloqueado</string>
+    <string-array name="motivos_reporte">
+        <item>Spam o publicidad no deseada</item>
+        <item>Lenguaje ofensivo o acoso</item>
+        <item>Intento de fraude o estafa</item>
+        <item>Maltrato animal</item>
+        <item>Otro comportamiento inapropiado</item>
+    </string-array>
+
+    <!-- Perfil -->
+    <string name="administrador">Administrador</string>
+    <string name="editar_perfil">Editar perfil</string>
+    <string name="cerrar_sesion">Cerrar sesión</string>
+    <string name="cerrar_sesion_pregunta">¿Cerrar sesión?</string>
+    <string name="perfil_actualizado">Perfil actualizado</string>
+    <string name="aviso_datos_privados">Tu correo, teléfono y dirección son privados: solo tú puedes verlos. Los demás usuarios solo ven tu nombre y ciudad.</string>
+
+    <!-- Administración -->
+    <string name="administrar_productos">Administrar productos</string>
+    <string name="administrar_productos_detalle">Agregar, modificar y eliminar productos</string>
+    <string name="admin_encabezado">Toca un producto para editarlo · mantén presionado para eliminarlo.</string>
+    <string name="admin_vacio">No hay productos. Usa el menú ⋮ para cargar el catálogo inicial o agrega uno nuevo.</string>
+    <string name="nuevo_producto">Nuevo producto</string>
+    <string name="editar_producto">Editar producto</string>
+    <string name="eliminar_producto">Eliminar producto</string>
+    <string name="eliminar_producto_pregunta">¿Eliminar «%1$s»?</string>
+    <string name="inactivo">Oculto</string>
+    <string name="stock_n">Stock: %1$d</string>
+    <string name="cargar_catalogo_inicial">Cargar catálogo inicial</string>
+    <string name="catalogo_inicial_detalle">Se crearán las 3 categorías y 14 alimentos para perros con su inventario.</string>
+    <string name="catalogo_inicial_reemplaza">Se restablecerán las 3 categorías y los 14 productos iniciales (precio e inventario vuelven a los valores originales). Los productos que hayas creado tú no se modifican.</string>
+    <string name="catalogo_cargado">Catálogo cargado</string>
+    <string name="url_imagen">URL de la imagen</string>
+    <string name="ayuda_url_imagen">Enlace https a una foto del producto</string>
+    <string name="nombre_producto">Nombre del producto</string>
+    <string name="marca">Marca</string>
+    <string name="categoria">Categoría</string>
+    <string name="presentacion">Presentación (ej. Bulto 8 kg)</string>
+    <string name="precio_cop">Precio (COP)</string>
+    <string name="inventario">Inventario</string>
+    <string name="visible_en_tienda">Visible en la tienda</string>
+    <string name="restriccion_catalogo">Restricción: la tienda solo admite alimentos para perros (concentrados, alimentos húmedos y snacks comestibles caninos). No se aceptan productos para otras especies ni accesorios.</string>
+    <string name="producto_no_valido">El producto no cumple las reglas</string>
+    <string name="producto_guardado">Producto guardado</string>
+</resources>

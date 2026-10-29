@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Alarma a pantalla completa de un cuidado (se ve sobre la pantalla de bloqueo) -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fondo_alarma"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="32dp">
+
+    <ImageView
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:background="@drawable/fondo_redondeado"
+        android:contentDescription="@null"
+        android:padding="24dp"
+        android:src="@drawable/ic_alarma"
+        app:tint="@color/verde" />
+
+    <TextView
+        android:id="@+id/tvTitulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:fontFamily="@font/nunito_extrabold"
+        android:gravity="center"
+        android:textColor="@color/blanco"
+        android:textSize="26sp"
+        tools:text="Max: Vacuna · Rabia" />
+
+    <TextView
+        android:id="@+id/tvTexto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:textColor="@color/blanco"
+        android:textSize="16sp"
+        tools:text="Es hora: 24/10/2026 8:00 a. m." />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnHecho"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:backgroundTint="@color/blanco"
+        android:text="@string/alarma_hecho"
+        android:textColor="@color/verde"
+        app:icon="@drawable/ic_aprobado"
+        app:iconTint="@color/verde" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnPosponer"
+        style="@style/Boton.Contorno"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/blanco"
+        app:icon="@drawable/ic_pendiente"
+        app:iconTint="@color/blanco"
+        app:strokeColor="@color/blanco"
+        tools:text="Posponer 10 min" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnDetener"
+        style="@style/Boton.Texto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/alarma_detener"
+        android:textColor="@color/blanco" />
+</LinearLayout>
