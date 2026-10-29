@@ -1,0 +1,7 @@
+// Archivo de compilación de nivel superior.
+// Aquí se declaran los plugins que usarán todos los módulos del proyecto.
+plugins {
+    id 'com.android.application' version '8.7.3' apply false
+    // Lee google-services.json y configura Firebase (Auth, Firestore, AI Logic).
+    id 'com.google.gms.google-services' version '4.4.2' apply false
+}
