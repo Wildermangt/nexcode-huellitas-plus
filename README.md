@@ -22,9 +22,12 @@ Documentación del proyecto en [`docs/`](docs/):
 | [05 Análisis estático del APK](docs/05_Analisis_estatico_APK.md) | Kali (apktool, jadx), secretos, permisos y almacenamiento local |
 | [06 Cambios de interfaz 29/10](docs/06_Cambios_interfaz_29oct.md) | Foto de la mascota, cuidados y alarmas |
 | [07 Seguridad, permisos y autorización](docs/07_Seguridad_permisos_y_autorizacion.md) · [Pruebas en el Playground](docs/pruebas-autorizacion-firestore.md) | Reglas de Firestore y pruebas entre usuarios |
+| [08 Conclusiones, dificultades y mejoras](docs/08_Conclusiones_dificultades_mejoras.md) | Qué se logró, qué costó y qué sigue |
+| [09 Manual de usuario](docs/09_Manual_de_usuario.md) | Cómo usar cada módulo de la app |
 
-Evidencias del 29/10 en [`docs/evidencias-29-oct/`](docs/evidencias-29-oct/). Las capturas
-anteriores (`DOCUMENTACION/capturas/`) no se publican porque muestran datos personales.
+Capturas de las pruebas funcionales en [`docs/capturas/`](docs/capturas/) (sin las tres que
+muestran una dirección de entrega) y de la regresión del 29/10 en
+[`docs/evidencias-29-oct/`](docs/evidencias-29-oct/).
 
 ## Tecnologías
 
