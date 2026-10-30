@@ -10,7 +10,21 @@ Docente: Ing. Jairo Armando Salcedo Aranda
 | Jeferson Wilderman González Tenjo | Product Owner · Developer |
 | José Leandro Ocampo Camacho | Scrum Master · Developer |
 
-Documentación del proyecto en [`docs/`](docs/01-planeacion-y-requisitos.md): planeación, requisitos y mockups.
+Documentación del proyecto en [`docs/`](docs/):
+
+| Documento | Contenido |
+|---|---|
+| [01 Planeación y requisitos](docs/01-planeacion-y-requisitos.md) · [02 Mockups](docs/02-mockups.md) | Problema, alcance, requisitos y diseño de pantallas |
+| [01 Configuración paso a paso](docs/01_Configuracion_paso_a_paso.md) | Firebase, Gemini, Wompi y compilación |
+| [02 Documento técnico](docs/02_Documento_tecnico.md) | Arquitectura, tecnologías y decisiones |
+| [03 Plan de pruebas y evidencias](docs/03_Plan_de_pruebas_y_evidencias.md) | Casos de uso probados y su resultado |
+| [04 Cumplimiento de la rúbrica](docs/04_Cumplimiento_rubrica.md) | Criterio por criterio |
+| [05 Análisis estático del APK](docs/05_Analisis_estatico_APK.md) | Kali (apktool, jadx), secretos, permisos y almacenamiento local |
+| [06 Cambios de interfaz 29/10](docs/06_Cambios_interfaz_29oct.md) | Foto de la mascota, cuidados y alarmas |
+| [07 Seguridad, permisos y autorización](docs/07_Seguridad_permisos_y_autorizacion.md) · [Pruebas en el Playground](docs/pruebas-autorizacion-firestore.md) | Reglas de Firestore y pruebas entre usuarios |
+
+Evidencias del 29/10 en [`docs/evidencias-29-oct/`](docs/evidencias-29-oct/). Las capturas
+anteriores (`DOCUMENTACION/capturas/`) no se publican porque muestran datos personales.
 
 ## Tecnologías
 
