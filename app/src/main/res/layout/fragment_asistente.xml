@@ -24,6 +24,26 @@
         app:drawableStartCompat="@drawable/ic_alerta"
         app:drawableTint="@color/azul" />
 
+    <!-- Llamada de voz con Leandro, el agente de Retell AI de Nexcode -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnLlamarLeandro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="10dp"
+        android:text="@string/leandro_hablar" />
+
+    <TextView
+        android:id="@+id/tvEstadoLeandro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="14dp"
+        android:paddingEnd="14dp"
+        android:textColor="@color/noche"
+        android:textSize="12sp"
+        android:visibility="gone" />
+
     <!-- Banner de urgencia: aparece cuando se detecta una posible emergencia -->
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/cardUrgencia"

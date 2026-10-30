@@ -302,6 +302,10 @@
     <!-- Asistente IA -->
     <string name="aviso_ia">La IA da orientación general y no sustituye la valoración de un médico veterinario.</string>
     <string name="urgencia_titulo">Posible urgencia</string>
+    <string name="leandro_hablar">Hablar con Leandro</string>
+    <string name="leandro_conectando">Conectando con Leandro…</string>
+    <string name="leandro_colgar">Colgar</string>
+    <string name="leandro_sin_microfono">Para hablar con Leandro necesitas permitir el micrófono.</string>
     <string name="urgencia_texto">Busca atención veterinaria profesional de inmediato.</string>
     <string name="ver_urgencias_cercanas">Ver veterinarias de urgencias cercanas</string>
     <string name="escribe_pregunta">Escribe tu pregunta</string>
