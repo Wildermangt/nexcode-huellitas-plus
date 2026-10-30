@@ -23,11 +23,11 @@ Documentación del proyecto en [`docs/`](docs/):
 | [06 Cambios de interfaz 29/10](docs/06_Cambios_interfaz_29oct.md) | Foto de la mascota, cuidados y alarmas |
 | [07 Seguridad, permisos y autorización](docs/07_Seguridad_permisos_y_autorizacion.md) · [Pruebas en el Playground](docs/pruebas-autorizacion-firestore.md) | Reglas de Firestore y pruebas entre usuarios |
 | [08 Conclusiones, dificultades y mejoras](docs/08_Conclusiones_dificultades_mejoras.md) | Qué se logró, qué costó y qué sigue |
-| [09 Manual de usuario](docs/09_Manual_de_usuario.md) | Cómo usar cada módulo de la app |
+| [09 Manual de usuario](docs/09_Manual_de_usuario.md) · [Manual completo en PDF](docs/Manual_HuellitasPlus.pdf) | Cómo usar cada módulo de la app |
 
-Capturas de las pruebas funcionales en [`docs/capturas/`](docs/capturas/) (sin las tres que
-muestran una dirección de entrega) y de la regresión del 29/10 en
-[`docs/evidencias-29-oct/`](docs/evidencias-29-oct/).
+Capturas de las pruebas funcionales en [`docs/capturas/`](docs/capturas/) y de la regresión
+del 29/10 en [`docs/evidencias-29-oct/`](docs/evidencias-29-oct/). Los datos de entrega que
+aparecen son ficticios.
 
 ## Tecnologías
 

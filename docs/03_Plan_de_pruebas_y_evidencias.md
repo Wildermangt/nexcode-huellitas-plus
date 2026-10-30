@@ -37,8 +37,8 @@ Ejecutar: Android Studio → clic derecho en `app/src/test` → *Run 'All Tests'
 
 ## C. Lista de capturas numeradas (para el manual)
 
-Las capturas están en [`docs/capturas/`](capturas/). No se publican la 32 (checkout), la 37
-(comprobante) ni la 41 (consola de Firestore) porque muestran una dirección de entrega.
+Las capturas están en [`docs/capturas/`](capturas/). Los datos de entrega que aparecen
+(dirección y teléfono) son ficticios, de prueba.
 
 | N.º | Archivo | Qué mostrar |
 |---|---|---|
