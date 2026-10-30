@@ -1,5 +1,7 @@
 package com.usb.edadperro.ui.perros;
 
+import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -8,10 +10,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
+import androidx.core.widget.ImageViewCompat;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
@@ -23,6 +28,7 @@ import com.usb.edadperro.data.modelo.Perro;
 import com.usb.edadperro.data.repo.PerroRepo;
 import com.usb.edadperro.databinding.FragmentPerroFormBinding;
 import com.usb.edadperro.util.Errores;
+import com.usb.edadperro.util.FotoMascota;
 import com.usb.edadperro.util.Recomendaciones;
 import com.usb.edadperro.util.Ui;
 
@@ -40,6 +46,18 @@ public class PerroFormFragment extends Fragment {
 
     private FragmentPerroFormBinding b;
     private Perro perro = new Perro();
+    private ActivityResultLauncher<String> selectorFoto;
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        // Debe registrarse antes de que el fragmento llegue a RESUMED.
+        selectorFoto = registerForActivityResult(new ActivityResultContracts.GetContent(), uri -> {
+            if (uri != null) {
+                aplicarFoto(uri);
+            }
+        });
+    }
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle state) {
@@ -74,6 +92,10 @@ public class PerroFormFragment extends Fragment {
 
         b.btnGuardar.setOnClickListener(v -> guardar());
         b.btnEliminar.setOnClickListener(v -> confirmarEliminar());
+
+        View.OnClickListener elegirFoto = v -> selectorFoto.launch("image/*");
+        b.btnFoto.setOnClickListener(elegirFoto);
+        b.ivFoto.setOnClickListener(elegirFoto);
 
         Bundle args = getArguments();
         String id = args == null ? null : args.getString(ARG_ID);
@@ -110,6 +132,7 @@ public class PerroFormFragment extends Fragment {
             b.etPeso.setText(CalculadoraFragment.formatearEdad(p.peso));
         }
         b.etNotas.setText(p.notas);
+        pintarFoto();
         marcarTamano(p.tamanoEnum());
         if ("Macho".equals(p.sexo)) {
             b.chipMacho.setChecked(true);
@@ -199,6 +222,33 @@ public class PerroFormFragment extends Fragment {
         });
         Toast.makeText(requireContext(), getString(R.string.perro_guardado, nombre), Toast.LENGTH_SHORT).show();
         NavHostFragment.findNavController(this).popBackStack();
+    }
+
+    /** Procesa la imagen elegida (recorte 1:1 + reducción) y la muestra. */
+    private void aplicarFoto(Uri uri) {
+        String base64 = FotoMascota.desdeUri(requireContext(), uri);
+        if (base64 == null) {
+            if (b != null) {
+                Snackbar.make(b.getRoot(), R.string.error_foto, Snackbar.LENGTH_LONG).show();
+            }
+            return;
+        }
+        perro.fotoBase64 = base64;
+        pintarFoto();
+    }
+
+    /** Muestra la foto guardada en el recuadro 1:1, o el ícono por defecto. */
+    private void pintarFoto() {
+        if (b == null) {
+            return;
+        }
+        Bitmap bmp = FotoMascota.aBitmap(perro.fotoBase64);
+        if (bmp != null) {
+            b.ivFoto.setPadding(0, 0, 0, 0);
+            ImageViewCompat.setImageTintList(b.ivFoto, null);
+            b.ivFoto.setImageBitmap(bmp);
+            b.btnFoto.setText(R.string.cambiar_foto);
+        }
     }
 
     private void confirmarEliminar() {

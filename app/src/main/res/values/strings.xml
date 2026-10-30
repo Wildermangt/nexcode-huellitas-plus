@@ -140,6 +140,10 @@
     <string name="macho">Macho</string>
     <string name="hembra">Hembra</string>
     <string name="notas_perro">Notas: alergias, condiciones, carácter…</string>
+    <string name="foto_mascota">Foto de la mascota</string>
+    <string name="agregar_foto">Agregar foto</string>
+    <string name="cambiar_foto">Cambiar foto</string>
+    <string name="error_foto">No se pudo cargar la imagen. Intenta con otra foto.</string>
     <string name="eliminar_perro">Eliminar perro</string>
     <string name="eliminar_perro_pregunta">¿Eliminar a %1$s?</string>
     <string name="perro_guardado">%1$s quedó guardado</string>
@@ -300,7 +304,7 @@
     <string name="mis_pedidos_detalle">Historial, estado de pago y comprobantes</string>
 
     <!-- Asistente IA -->
-    <string name="aviso_ia">La IA da orientación general y no sustituye la valoración de un médico veterinario.</string>
+    <string name="aviso_ia">🤖 Estás hablando con un asistente de inteligencia artificial. Da orientación general y no sustituye la valoración de un médico veterinario.</string>
     <string name="urgencia_titulo">Posible urgencia</string>
     <string name="urgencia_texto">Busca atención veterinaria profesional de inmediato.</string>
     <string name="ver_urgencias_cercanas">Ver veterinarias de urgencias cercanas</string>

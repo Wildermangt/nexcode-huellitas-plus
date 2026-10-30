@@ -176,27 +176,11 @@
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
-        <!-- Accesos rápidos a los módulos -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="@string/inicio_modulos"
-            android:textAppearance="@style/Texto.Subtitulo" />
-
-        <GridLayout
-            android:id="@+id/gridAccesos"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:columnCount="3"
-            android:useDefaultMargins="false" />
-
         <!-- Perros registrados -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="20dp"
             android:gravity="center_vertical"
             android:orientation="horizontal">
 
@@ -232,6 +216,22 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:nestedScrollingEnabled="false" />
+
+        <!-- Accesos rápidos a los módulos -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/inicio_modulos"
+            android:textAppearance="@style/Texto.Subtitulo" />
+
+        <GridLayout
+            android:id="@+id/gridAccesos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:columnCount="3"
+            android:useDefaultMargins="false" />
 
     </LinearLayout>
 </androidx.core.widget.NestedScrollView>

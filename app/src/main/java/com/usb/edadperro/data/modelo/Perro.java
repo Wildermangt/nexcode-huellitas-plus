@@ -24,6 +24,9 @@ public class Perro {
     /** "Macho" o "Hembra". */
     public String sexo;
     public String notas;
+    /** Foto de la mascota recortada a 1:1 y reducida, codificada en Base64 (JPEG).
+     *  Se guarda en el propio documento para no depender de Firebase Storage. */
+    public String fotoBase64;
     @ServerTimestamp
     public Date creado;
 
