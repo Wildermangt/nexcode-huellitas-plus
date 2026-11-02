@@ -36,6 +36,7 @@ public final class PerroRepo {
         m.put("peso", p.peso);
         m.put("sexo", p.sexo);
         m.put("notas", p.notas);
+        m.put("fotoBase64", p.fotoBase64);
         m.put("creado", p.creado == null ? FieldValue.serverTimestamp() : p.creado);
         return ref.set(m);
     }

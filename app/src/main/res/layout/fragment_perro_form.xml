@@ -22,6 +22,30 @@
                 android:orientation="vertical"
                 android:padding="16dp">
 
+                <ImageView
+                    android:id="@+id/ivFoto"
+                    android:layout_width="140dp"
+                    android:layout_height="140dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="8dp"
+                    android:background="@drawable/fondo_redondeado"
+                    android:backgroundTint="@color/naranja_suave"
+                    android:contentDescription="@string/foto_mascota"
+                    android:padding="30dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_huella"
+                    app:tint="@color/naranja" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnFoto"
+                    style="@style/Boton.Texto"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="4dp"
+                    android:text="@string/agregar_foto"
+                    app:icon="@drawable/ic_mas" />
+
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/tilNombre"
                     android:layout_width="match_parent"

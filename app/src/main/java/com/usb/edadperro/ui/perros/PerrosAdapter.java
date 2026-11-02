@@ -1,13 +1,20 @@
 package com.usb.edadperro.ui.perros;
 
+import android.content.res.ColorStateList;
+import android.graphics.Bitmap;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
+import androidx.core.widget.ImageViewCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.usb.edadperro.R;
 import com.usb.edadperro.data.modelo.Perro;
 import com.usb.edadperro.databinding.ItemPerroBinding;
+import com.usb.edadperro.util.FotoMascota;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -50,7 +57,25 @@ public class PerrosAdapter extends RecyclerView.Adapter<PerrosAdapter.VH> {
                 raza, TextosPerro.edad(p.edad), TextosPerro.tamano(p.tamanoEnum())));
         h.b.tvEdadHumana.setText(String.format(Locale.getDefault(), "%.0f años humanos · %s",
                 p.edadHumana(), TextosPerro.etapa(p.etapa())));
+        pintarFoto(h, p);
         h.itemView.setOnClickListener(v -> alTocar.abrir(p));
+    }
+
+    /** Muestra la foto 1:1 del perro, o el ícono de huella si no tiene. */
+    private void pintarFoto(VH h, Perro p) {
+        Bitmap foto = FotoMascota.aBitmap(p.fotoBase64);
+        if (foto != null) {
+            h.b.ivFoto.setPadding(0, 0, 0, 0);
+            ImageViewCompat.setImageTintList(h.b.ivFoto, null);
+            h.b.ivFoto.setImageBitmap(foto);
+        } else {
+            int pad = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 10,
+                    h.itemView.getResources().getDisplayMetrics());
+            h.b.ivFoto.setPadding(pad, pad, pad, pad);
+            ImageViewCompat.setImageTintList(h.b.ivFoto,
+                    ColorStateList.valueOf(ContextCompat.getColor(h.itemView.getContext(), R.color.naranja)));
+            h.b.ivFoto.setImageResource(R.drawable.ic_huella);
+        }
     }
 
     @Override
