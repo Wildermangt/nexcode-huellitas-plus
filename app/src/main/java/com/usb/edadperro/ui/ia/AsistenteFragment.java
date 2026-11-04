@@ -1,11 +1,16 @@
 package com.usb.edadperro.ui.ia;
 
+import android.Manifest;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
@@ -13,8 +18,10 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.google.android.material.chip.Chip;
 import com.google.android.material.snackbar.Snackbar;
+import com.usb.edadperro.BuildConfig;
 import com.usb.edadperro.MainActivity;
 import com.usb.edadperro.R;
+import com.usb.edadperro.data.remoto.LlamadaConLeandro;
 import com.usb.edadperro.databinding.FragmentAsistenteBinding;
 import com.usb.edadperro.util.Errores;
 import com.usb.edadperro.util.Red;
@@ -66,6 +73,8 @@ public class AsistenteFragment extends Fragment {
         b.btnVerUrgencias.setOnClickListener(v -> ((MainActivity) requireActivity()).abrirUrgencias());
         b.btnCerrarUrgencia.setOnClickListener(v -> vm.cerrarUrgencia());
 
+        prepararLlamadaLeandro();
+
         for (int res : new int[]{R.string.sugerencia_1, R.string.sugerencia_2,
                 R.string.sugerencia_3, R.string.sugerencia_4}) {
             Chip chip = new Chip(requireContext());
@@ -87,9 +96,51 @@ public class AsistenteFragment extends Fragment {
         vm.enviar(texto);
     }
 
+    // ---------------------- Llamada de voz con Leandro (Retell AI) ----------------------
+
+    private LlamadaConLeandro llamada;
+
+    /** Se registra antes de que el fragmento se muestre, como exige la API de permisos. */
+    private final ActivityResultLauncher<String> permisoMicrofono =
+            registerForActivityResult(new ActivityResultContracts.RequestPermission(), concedido -> {
+                if (concedido) {
+                    llamada.iniciar();
+                } else if (b != null) {
+                    Snackbar.make(b.getRoot(), R.string.leandro_sin_microfono, Snackbar.LENGTH_LONG).show();
+                }
+            });
+
+    private void prepararLlamadaLeandro() {
+        llamada = new LlamadaConLeandro(requireContext(), BuildConfig.LEANDRO_URL, (estado, motivo) -> {
+            if (b == null) {
+                return;
+            }
+            b.btnLlamarLeandro.setEnabled(estado != LlamadaConLeandro.Estado.CONECTANDO);
+            b.btnLlamarLeandro.setText(estado == LlamadaConLeandro.Estado.EN_CURSO ? R.string.leandro_colgar
+                    : estado == LlamadaConLeandro.Estado.CONECTANDO ? R.string.leandro_conectando
+                    : R.string.leandro_hablar);
+            b.tvEstadoLeandro.setVisibility(motivo == null ? View.GONE : View.VISIBLE);
+            b.tvEstadoLeandro.setText(motivo);
+        });
+
+        b.btnLlamarLeandro.setOnClickListener(v -> {
+            if (llamada.estado() == LlamadaConLeandro.Estado.EN_CURSO) {
+                llamada.colgar();
+            } else if (ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.RECORD_AUDIO)
+                    == PackageManager.PERMISSION_GRANTED) {
+                llamada.iniciar();
+            } else {
+                permisoMicrofono.launch(Manifest.permission.RECORD_AUDIO);
+            }
+        });
+    }
+
     @Override
     public void onDestroyView() {
         super.onDestroyView();
+        if (llamada != null) {
+            llamada.colgar(); // al salir de la pantalla se cuelga
+        }
         b = null;
     }
 }

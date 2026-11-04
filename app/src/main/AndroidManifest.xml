@@ -5,6 +5,9 @@
     <!-- Internet: Firebase, IA, mapas de OpenStreetMap y pagos -->
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- Llamada de voz con el agente Leandro: micrófono (se pide al tocar el botón) y audio -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
     <!-- Ubicación: solo para buscar veterinarias cercanas (se pide en tiempo de ejecución) -->
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
