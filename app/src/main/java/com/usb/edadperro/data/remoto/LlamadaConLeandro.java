@@ -1,7 +1,9 @@
 package com.usb.edadperro.data.remoto;
 
 import android.content.Context;
+import android.media.AudioDeviceInfo;
 import android.media.AudioManager;
+import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
 
@@ -158,7 +160,7 @@ public class LlamadaConLeandro {
         }
 
         // 2. Conectar el audio por WebRTC
-        audio().setMode(AudioManager.MODE_IN_COMMUNICATION); // activa la cancelación de eco
+        activarAltavoz();
         PeerConnectionFactory.initialize(
                 PeerConnectionFactory.InitializationOptions.builder(contexto).createInitializationOptions());
         fabrica = PeerConnectionFactory.builder()
@@ -192,6 +194,7 @@ public class LlamadaConLeandro {
     }
 
     private synchronized void cerrarLocal() {
+        restaurarAudio(); // también si la llamada falló antes de crear la conexión
         PeerConnection pc = conexion;
         if (pc == null) {
             return; // se limpia primero: close() puede volver a entrar
@@ -203,7 +206,68 @@ public class LlamadaConLeandro {
             fabrica.dispose();
             fabrica = null;
         }
-        audio().setMode(AudioManager.MODE_NORMAL);
+    }
+
+    // ---------------- Altavoz ----------------
+
+    private boolean audioActivo = false;
+    private int volumenPrevio = -1;
+
+    /**
+     * Leandro funciona como un asistente de voz: se le habla con el teléfono en la mano,
+     * así que la respuesta sale por el altavoz y no por el auricular de oreja. El volumen
+     * de llamada suele estar muy bajo (1 de 8 en las pruebas): si está por debajo del
+     * 70 % se sube y al colgar se devuelve como estaba.
+     */
+    @SuppressWarnings("deprecation")
+    private void activarAltavoz() {
+        AudioManager a = audio();
+        a.setMode(AudioManager.MODE_IN_COMMUNICATION); // activa la cancelación de eco
+        audioActivo = true;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+            for (AudioDeviceInfo d : a.getAvailableCommunicationDevices()) {
+                if (d.getType() == AudioDeviceInfo.TYPE_BUILTIN_SPEAKER) {
+                    a.setCommunicationDevice(d);
+                    break;
+                }
+            }
+        } else {
+            a.setSpeakerphoneOn(true);
+        }
+        int maximo = a.getStreamMaxVolume(AudioManager.STREAM_VOICE_CALL);
+        int actual = a.getStreamVolume(AudioManager.STREAM_VOICE_CALL);
+        int deseado = Math.round(maximo * 0.7f);
+        if (actual < deseado) {
+            try {
+                a.setStreamVolume(AudioManager.STREAM_VOICE_CALL, deseado, 0);
+                volumenPrevio = actual;
+            } catch (SecurityException ignorada) {
+                // Modo No molestar: se deja el volumen como está.
+            }
+        }
+    }
+
+    @SuppressWarnings("deprecation")
+    private synchronized void restaurarAudio() {
+        if (!audioActivo) {
+            return;
+        }
+        audioActivo = false;
+        AudioManager a = audio();
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+            a.clearCommunicationDevice();
+        } else {
+            a.setSpeakerphoneOn(false);
+        }
+        if (volumenPrevio >= 0) {
+            try {
+                a.setStreamVolume(AudioManager.STREAM_VOICE_CALL, volumenPrevio, 0);
+            } catch (SecurityException ignorada) {
+                // Modo No molestar.
+            }
+            volumenPrevio = -1;
+        }
+        a.setMode(AudioManager.MODE_NORMAL);
     }
 
     private String enviar(String url, String metodo, @Nullable String json) throws Exception {
